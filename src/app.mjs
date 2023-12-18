@@ -2,7 +2,7 @@ import path from 'path';
 import express from 'express';
 import hbs from 'hbs';
 
-
+const port = process.env.PORT || 3000;
 const app = express()
 const publicDirectory = path.resolve('./public')
 const viewsDirectory = path.resolve('./templates/views')
@@ -55,6 +55,6 @@ app.get('*', (req,res)=> {
     })
 })
 
-app.listen(3000, ()=> {
+app.listen(port, ()=> {
     console.log('success for console')
 })
